@@ -1,0 +1,20 @@
+//Time complexity: O(logn), where n is the length of the input array. We are using binary search to find the index of the kth missing positive integer, which takes logarithmic time.
+
+//Space complexity: O(1). We are using constant extra space to store the left and right pointers in binary search.
+
+//The problem is asking to find the kth missing positive integer in a strictly increasing array of positive integers. We can use binary search to find the index of the kth missing positive integer in the array.
+
+class Solution {
+    public int findKthPositive(int[] arr, int k) {
+        int left = 0, right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] - mid - 1 < k) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return left + k;
+    }
+}
