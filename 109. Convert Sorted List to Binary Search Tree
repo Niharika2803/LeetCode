@@ -26,6 +26,8 @@
  *     }
  * }
  */
+ 
+ 
 class Solution {
     public TreeNode constructBST(ListNode leftHead, ListNode rightHead) {
         if (leftHead == rightHead)
