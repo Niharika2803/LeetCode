@@ -20,7 +20,6 @@ public class ContainsDuplicate {
         /* 
         Approach 2: Sorting 
         T.C. = O(n log n), S.C = O(1)
-
         Arrays.sort(nums);
         int len = nums.length;
         for (int i = 1; i < len; i++) {
@@ -33,31 +32,25 @@ public class ContainsDuplicate {
     }
 
 
-
-
-
-
-
     // user input
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter the size of the array: ");
+            int size = sc.nextInt();
 
-        System.out.print("Enter the size of the array: ");
-        int size = sc.nextInt();
+            System.out.println("Please enter " + size + " elements of the array:");
 
-        System.out.println("Please enter " + size + " elements of the array:");
+            int[] nums = new int[size];
+            for (int i = 0; i < size; i++) {
+                int nextNum = sc.nextInt();
+                nums[i] = nextNum;
+            }
 
-        int[] nums = new int[size];
-        for (int i = 0; i < size; i++) {
-            int nextNum = sc.nextInt();
-            nums[i] = nextNum;
-        }
-
-        boolean hasDuplicate = containsDuplicate(nums);
-        if (hasDuplicate) {
-            System.out.println("The array contains duplicate elements.");
-        } else {
-            System.out.println("The array does not contain duplicate elements.");
+            if (containsDuplicate(nums)) {
+                System.out.println("The array contains duplicate elements.");
+            } else {
+                System.out.println("The array does not contain duplicate elements.");
+            }
         }
     }
 }
