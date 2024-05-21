@@ -1,7 +1,8 @@
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class LongestConsecutiveSequence {
-    public int longestConsecutive(int[] nums) {
+    public static int longestConsecutive(int[] nums) {
         if (nums.length == 0){
             return 0;
         }
@@ -23,5 +24,24 @@ public class LongestConsecutiveSequence {
             }
         }
         return ans;
+    }
+
+
+
+
+    // user inputs
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of the array:");
+        int arraySize = sc.nextInt();
+        int[] nums = new int[arraySize];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < arraySize; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        int result = longestConsecutive(nums);
+        System.out.println("The longest consecutive sequence is of length: " + result);
     }
 }
