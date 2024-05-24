@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ThreeSum {
 
@@ -51,9 +52,24 @@ public class ThreeSum {
         return solutions;
     }
 
+
+
+
+
+    // user inputs
     public static void main(String[] args) {
         ThreeSum ts = new ThreeSum();
-        int[] nums = {-1, 0, 1, 2, -1, -4};
-        System.out.println(ts.threeSum(nums));
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size = sc.nextInt();
+        int[] nums = new int[size];
+
+        System.out.println("Enter " + size + " integers:");
+        for (int i = 0; i < size; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        System.out.println("Three Sum combinations: " + ts.threeSum(nums));
     }
 }
